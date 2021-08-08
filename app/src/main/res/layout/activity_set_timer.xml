@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".SetTimerActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/chase_board" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Set Timer"
+            android:textColor="@color/purple_500"
+            android:textStyle="bold"
+            android:textSize="@dimen/_28ssp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_50sdp">
+
+            <EditText
+                android:id="@+id/ed_hour"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:gravity="center"
+                android:hint="HH"
+                android:inputType="number"
+                android:maxLength="2"
+                android:background="@drawable/timer_box_back"
+                android:textSize="@dimen/_15ssp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/ed_minute"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:gravity="center"
+                android:hint="MM"
+                android:inputType="number"
+                android:maxLength="2"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:background="@drawable/timer_box_back"
+                android:textSize="@dimen/_15ssp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/ed_second"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:gravity="center"
+                android:hint="SS"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:inputType="number"
+                android:maxLength="2"
+                android:background="@drawable/timer_box_back"
+                android:textSize="@dimen/_15ssp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btn_set"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:text="PLAY"
+            android:layout_gravity="center"
+            android:textColor="#373434"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:background="@drawable/button_back"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
