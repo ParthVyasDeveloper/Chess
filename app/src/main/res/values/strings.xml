@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Chess Timer</string>
+    <string name="admobId">ca-app-pub-8880032204560435~6382286075</string>
+    <string name="bannerUnite">ca-app-pub-8880032204560435/8816877725</string>
 </resources>

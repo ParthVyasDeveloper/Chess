@@ -13,6 +13,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+
 import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,12 +31,21 @@ public class MainActivity extends AppCompatActivity {
     long userTotalTime=7000000;
     long whiteUserTime;
 
-
+    private AdView mAdView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         txtWhiteTime = findViewById(R.id.tv_white_timer);
         txtBlackTime = findViewById(R.id.tv_black_timer);
@@ -246,9 +261,20 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+
+        try{
+            countDownTimer.cancel();
+        }catch (Exception e){
+
+        }
+
+        try{
+            countDownTimer1.cancel();
+        }catch (Exception e){
+
+        }
         super.onBackPressed();
-        countDownTimer.cancel();
-        countDownTimer1.cancel();
+
     }
 
 }
